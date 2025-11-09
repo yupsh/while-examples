@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	yup "github.com/gloo-foo/framework"
+	gloo "github.com/gloo-foo/framework"
 	"github.com/yupsh/echo"
 	"github.com/yupsh/grep"
 	. "github.com/gloo-foo/pipe"
@@ -13,7 +13,7 @@ import (
 
 func ExampleWhile() {
 	// echo "1\n2\n3" | while read line; do echo "Line: $line"; done
-	if err := yup.Run(Pipeline(
+	if err := gloo.Run(Pipeline(
 		echo.Echo("1\n2\n3"),
 		while.While(grep.Grep(".")),
 	)); err != nil {
